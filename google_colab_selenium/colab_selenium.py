@@ -12,8 +12,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.selenium_manager import SeleniumManager
 
-import undetected_chromedriver as uc
-
 
 class ColabSeleniumManager:
     default_colab_options = [
@@ -136,6 +134,11 @@ class UndetectedChromeDriver(uc.Chrome):
         --lang=en
     """
     def __init__(self, options: Options = None, keep_alive: bool = True):
+        try:
+            import undetected_chromedriver as uc
+        except ImportError as e:
+            raise ImportError('Please install google-colab-selenium with the "undetected" extra -> pip3 install google-colab-selenium[undetected]')
+        
         self.manager = ColabSeleniumManager(options or uc.ChromeOptions())
 
         try:
