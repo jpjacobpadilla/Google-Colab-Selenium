@@ -154,3 +154,4 @@ cython_debug/
 
 .vscode/
 .DS_store
+testing.ipynb
