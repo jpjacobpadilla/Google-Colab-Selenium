@@ -6,4 +6,7 @@ pip install Google-Colab-Selenium
 ```
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1yzJ59EgqNUKTujCZ7xgLxsA_MlX5vt1_?usp=sharing]
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1yzJ59EgqNUKTujCZ7xgLxsA_MlX5vt1_)
+
+
+
