@@ -6,7 +6,7 @@ The best way to use Selenium in Google Colab Notebooks!
 - Support for undetected ChromeDriver for more advanced use cases.
 <br>
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1yzJ59EgqNUKTujCZ7xgLxsA_MlX5vt1_)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uApofPD-uTbZQ8dVq2IVTGHZOxdJtiel?usp=sharing)
 
 ## Installation  
 
@@ -72,7 +72,7 @@ You can also contact me [here](https://jacobpadilla.com/contact).
 
 <br>
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1yzJ59EgqNUKTujCZ7xgLxsA_MlX5vt1_)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uApofPD-uTbZQ8dVq2IVTGHZOxdJtiel?usp=sharing)
 
 
 
