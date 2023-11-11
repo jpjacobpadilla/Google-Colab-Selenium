@@ -2,7 +2,7 @@
 The best way to use Selenium in Google Colab Notebooks!
 
 ```bash
-pip install Google-Colab-Selenium
+pip install google-colab-selenium
 ```
 
 
