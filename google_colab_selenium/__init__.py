@@ -1,18 +1,23 @@
+from google_colab_selenium.exceptions import (
+    GoogleColabSeleniumError,
+    InstallChromeError,
+    ChromeDriverPathError,
+    StartingChromeDriverError
+)
+
 __all__ = (
     'ChromeDriver', 
     'UndetectedChromeDriver', 
     'Chrome', 
     'UndetectedChrome',
-    'Spinner',
     'GoogleColabSeleniumError',
     'InstallChromeError',
     'ChromeDriverPathError',
     'StartingChromeDriverError'
 )
 
+
 import os
-
-
 assert 'COLAB_GPU' in os.environ, "This package should only be used in Google Colab Notebooks."
 
 
