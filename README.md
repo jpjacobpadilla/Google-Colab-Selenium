@@ -5,7 +5,6 @@ The best way to use Selenium in Google Colab Notebooks!
 - Seamless integration with Google Colab.
 - Support for undetected ChromeDriver for more advanced use cases.
 <br>
-<br>
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1yzJ59EgqNUKTujCZ7xgLxsA_MlX5vt1_)
 
@@ -13,12 +12,12 @@ The best way to use Selenium in Google Colab Notebooks!
 
 Basic usage:
 ```bash
-pip install google-colab-selenium
+%pip install google-colab-selenium
 ```
 
 Use [undetected-chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver) version:
 ```bash
-pip install google-colab-selenium[undetected]
+%pip install google-colab-selenium[undetected]
 ```
 
 
@@ -34,7 +33,8 @@ driver.quit()
 
 ## Undetected ChromeDriver
 
-```pythonfrom google_colab_selenium import UndetectedChromeDriver
+```python
+from google_colab_selenium import UndetectedChromeDriver
 
 driver = UndetectedChromeDriver()
 # Your code to interact with the driver here
