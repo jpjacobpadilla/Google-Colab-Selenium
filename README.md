@@ -1,5 +1,4 @@
 # Google-Colab-Selenium
-[![PyPI downloads](https://img.shields.io/pypi/dm/google-colab-selenium.svg)](https://pypi.org/project/google-colab-selenium/)
 
 The best way to use Selenium in Google Colab Notebooks!
 
