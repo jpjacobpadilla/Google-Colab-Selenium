@@ -75,4 +75,5 @@ You can also contact me [here](https://jacobpadilla.com/contact).
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uApofPD-uTbZQ8dVq2IVTGHZOxdJtiel?usp=sharing)
 
 
+![logo](logo.png)
 
