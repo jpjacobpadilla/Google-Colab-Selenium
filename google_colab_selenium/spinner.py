@@ -4,7 +4,6 @@ import uuid
 
 
 class Spinner:
-    # Initializer accepts a message
     def __init__(self, message: str, done: str):
         self.message = message
         self.done_message = done
