@@ -7,7 +7,7 @@ The best way to use Selenium in Google Colab Notebooks!
 - Support for undetected ChromeDriver for more advanced use cases.
 <br>
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uApofPD-uTbZQ8dVq2IVTGHZOxdJtiel?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MUFonUP4nlgtYoPIglnr0HsUsqljz64A?usp=sharing)
 
 ## Installation  
 
@@ -24,9 +24,9 @@ Use [undetected-chromedriver](https://github.com/ultrafunkamsterdam/undetected-c
 
 ## Basic Usage
 ```python
-from google_colab_selenium import ChromeDriver
+import google_colab_selenium as gs
 
-driver = ChromeDriver()
+driver = gs.Chrome()
 # Your code to interact with the driver here
 # ...
 driver.quit()
@@ -35,9 +35,9 @@ driver.quit()
 ## Undetected ChromeDriver
 
 ```python
-from google_colab_selenium import UndetectedChromeDriver
+import google_colab_selenium as gs
 
-driver = UndetectedChromeDriver()
+driver = gs.UndetectedChrome()
 # Your code to interact with the driver here
 # ...
 driver.quit()
@@ -56,13 +56,12 @@ You are welcome to extend or override these options based on your needs:
 
 ```python
 from selenium.webdriver.chrome.options import Options
-from google_colab_selenium import ChromeDriver
+import google_colab_selenium as gs
 
 custom_options = Options()
 # Add your custom options here
-# custom_options.add_argument("--your-option")
 
-driver = ChromeDriver(options=custom_options)
+driver = gs.Chrome(options=custom_options)
 ```
 
 
@@ -73,7 +72,7 @@ You can also contact me [here](https://jacobpadilla.com/contact).
 
 <br>
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uApofPD-uTbZQ8dVq2IVTGHZOxdJtiel?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MUFonUP4nlgtYoPIglnr0HsUsqljz64A?usp=sharing)
 
 
 ![logo](https://raw.githubusercontent.com/jpjacobpadilla/Google-Colab-Selenium/main/logo.png)
