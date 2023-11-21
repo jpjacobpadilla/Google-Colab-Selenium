@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/jpjacobpadilla/Google-Colab-Selenium/main/logo.png"/>
+    <img src="https://raw.githubusercontent.com/jpjacobpadilla/Google-Colab-Selenium/blob/better-readme/logo.png">
 </p>
 
 The best way to use Selenium in Google Colab Notebooks!
