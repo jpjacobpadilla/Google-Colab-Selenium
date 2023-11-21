@@ -1,4 +1,6 @@
-# Google-Colab-Selenium
+<p align="center">
+    <img src="https://raw.githubusercontent.com/jpjacobpadilla/Google-Colab-Selenium/main/logo.png"/>
+</p>
 
 The best way to use Selenium in Google Colab Notebooks!
 
@@ -73,7 +75,3 @@ You can also contact me [here](https://jacobpadilla.com/contact).
 <br>
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MUFonUP4nlgtYoPIglnr0HsUsqljz64A?usp=sharing)
-
-
-![logo](https://raw.githubusercontent.com/jpjacobpadilla/Google-Colab-Selenium/main/logo.png)
-
