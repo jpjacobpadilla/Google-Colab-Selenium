@@ -20,6 +20,7 @@ class ColabSeleniumManager:
     ]
 
     _downloaded_chrome = False
+    _updated_apt = False
 
     update_apt = ['sudo', 'apt', 'update']
     upgrade_apt = ['sudo', 'apt', 'upgrade']
@@ -31,13 +32,17 @@ class ColabSeleniumManager:
     chromedriver_path: str = None
 
     def __init__(self, base_options: Options):
-        try:
-            with Spinner('Updating and upgrading APT', done='Updated and upgraded APT'):
-                subprocess.run(self.update_apt, check=True)
-                subprocess.run(self.upgrade_apt, check=True)
+        if not self._updated_apt:
+            try:
+                with Spinner('Updating and upgrading APT', done='Updated and upgraded APT'):
+                    subprocess.run(self.update_apt, check=True)
+                    subprocess.run(self.upgrade_apt, check=True)
 
-        except Exception as e:
-            raise GoogleColabSeleniumError('Failed to update and upgrade APT') from e
+            except Exception as e:
+                raise GoogleColabSeleniumError('Failed to update and upgrade APT') from e
+
+            else:
+                self._updated_apt = True
 
 
         if not self._downloaded_chrome:
