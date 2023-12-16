@@ -3,7 +3,7 @@ import shutil
 
 from google_colab_selenium.spinner import Spinner
 from google_colab_selenium.exceptions import (
-    ChromeDriverPathError, InstallChromeError,
+    ChromeDriverPathError, InstallChromeError, GoogleColabSeleniumError
 )
 
 from selenium.webdriver.chrome.service import Service
@@ -21,6 +21,9 @@ class ColabSeleniumManager:
 
     _downloaded_chrome = False
 
+    update_apt = ['sudo', 'apt', 'update']
+    upgrade_apt = ['sudo', 'apt', 'upgrade']
+
     download_command = ['curl', '-o', 'google-chrome-stable_current_amd64.deb', 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb']
     install_command = ['sudo', 'apt', 'install', './google-chrome-stable_current_amd64.deb', '-y']
     clean_up_command = ['rm', 'google-chrome-stable_current_amd64.deb']
@@ -28,6 +31,15 @@ class ColabSeleniumManager:
     chromedriver_path: str = None
 
     def __init__(self, base_options: Options):
+        try:
+            with Spinner('Updating and upgrading APT', done='Updated and upgraded APT'):
+                subprocess.run(self.update_apt, check=True)
+                subprocess.run(self.upgrade_apt, check=True)
+
+        except Exception as e:
+            raise GoogleColabSeleniumError('Failed to update and upgrade APT') from e
+
+
         if not self._downloaded_chrome:
             # Checks if Chrome was already installed. The class may of been reset.
             if shutil.which("google-chrome-stable") is None:
