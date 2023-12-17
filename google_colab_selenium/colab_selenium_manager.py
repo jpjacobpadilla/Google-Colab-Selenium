@@ -53,7 +53,7 @@ class ColabSeleniumManager:
         else:
             cls._updated_apt = True
 
-    def install_chrome(cls, *args, **kwargs) -> None:
+    def install_chrome(cls) -> None:
         """
         To Install Google-Chrome-Stable, the first command uses CURL to download
         the debian file. Next Advanced Package Tool installs the file and once
