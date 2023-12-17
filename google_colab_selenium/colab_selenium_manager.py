@@ -32,25 +32,21 @@ class ColabSeleniumManager:
     chromedriver_path: str = None
 
     def __init__(self, base_options: Options):
-        if not self._updated_apt:
+        if not ColabSeleniumManager._updated_apt:
             try:
                 with Spinner('Updating and upgrading APT', done='Updated and upgraded APT'):
                     subprocess.run(self.update_apt, check=True)
                     subprocess.run(self.upgrade_apt, check=True)
-
+            
             except Exception as e:
                 raise GoogleColabSeleniumError('Failed to update and upgrade APT') from e
 
             else:
-                self._updated_apt = True
+                ColabSeleniumManager._updated_apt = True
 
-
-        if not self._downloaded_chrome:
-            # Checks if Chrome was already installed. The class may of been reset.
-            if shutil.which("google-chrome-stable") is None:
-                self.install_chrome()
-            else:
-                self._downloaded_chrome = True
+        if not ColabSeleniumManager._downloaded_chrome and shutil.which("google-chrome-stable") is None:
+                ColabSeleniumManager.install_chrome()
+                ColabSeleniumManager._downloaded_chrome = True
 
         self.options = self.default_options(base_options or Options())
         self.service = self.get_service()
