@@ -1,5 +1,4 @@
 import subprocess
-import shutil
 
 from google_colab_selenium.spinner import Spinner
 from google_colab_selenium.exceptions import (
