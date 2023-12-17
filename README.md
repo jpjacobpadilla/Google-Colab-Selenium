@@ -73,5 +73,6 @@ Contributions are welcome! If you have a suggestion or an issue, please use the 
 You can also contact me [here](https://jacobpadilla.com/contact).
 
 <br>
+<br>
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MUFonUP4nlgtYoPIglnr0HsUsqljz64A?usp=sharing)
