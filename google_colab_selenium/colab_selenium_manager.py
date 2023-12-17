@@ -31,10 +31,10 @@ class ColabSeleniumManager:
     chromedriver_path: str = None
 
     def __init__(self, base_options: Options):
-        if not ColabSeleniumManager._updated_apt:
+        if not self._updated_apt:
             self.update_upgrade_apt()
 
-        if not ColabSeleniumManager._downloaded_chrome:
+        if not self._downloaded_chrome:
             self.install_chrome()
 
         self.options = self.default_options(base_options or Options())
@@ -53,6 +53,7 @@ class ColabSeleniumManager:
         else:
             cls._updated_apt = True
 
+    @classmethod
     def install_chrome(cls) -> None:
         """
         To Install Google-Chrome-Stable, the first command uses CURL to download
