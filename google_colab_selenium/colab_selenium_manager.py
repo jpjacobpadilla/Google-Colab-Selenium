@@ -33,25 +33,27 @@ class ColabSeleniumManager:
 
     def __init__(self, base_options: Options):
         if not ColabSeleniumManager._updated_apt:
-            try:
-                with Spinner('Updating and upgrading APT', done='Updated and upgraded APT'):
-                    subprocess.run(self.update_apt, check=True)
-                    subprocess.run(self.upgrade_apt, check=True)
-            
-            except Exception as e:
-                raise GoogleColabSeleniumError('Failed to update and upgrade APT') from e
+            self.update_upgrade_apt()
 
-            else:
-                ColabSeleniumManager._updated_apt = True
-
-        if not ColabSeleniumManager._downloaded_chrome and shutil.which("google-chrome-stable") is None:
-                ColabSeleniumManager.install_chrome()
-                ColabSeleniumManager._downloaded_chrome = True
+        if not ColabSeleniumManager._downloaded_chrome:
+            self.install_chrome()
 
         self.options = self.default_options(base_options or Options())
         self.service = self.get_service()
 
     @classmethod
+    def update_upgrade_apt(cls) -> None:
+        try:
+            with Spinner('Updating and upgrading APT', done='Updated and upgraded APT'):
+                subprocess.run(cls.update_apt, check=True)
+                subprocess.run(cls.upgrade_apt, check=True)
+        
+        except Exception as e:
+            raise GoogleColabSeleniumError('Failed to update and upgrade APT') from e
+
+        else:
+            cls._updated_apt = True
+
     def install_chrome(cls, *args, **kwargs) -> None:
         """
         To Install Google-Chrome-Stable, the first command uses CURL to download
