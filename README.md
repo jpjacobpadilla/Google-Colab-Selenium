@@ -11,7 +11,7 @@
 - Supports Undetected ChromeDriver for more advanced use cases.
 <br>
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MUFonUP4nlgtYoPIglnr0HsUsqljz64A?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MX3xY23Go1STe7LbDMvwf2KaqHpbrVhC?usp=sharing)
 
 ## Installation  
 
@@ -77,5 +77,5 @@ Contributions are welcome! If you have a suggestion or an issue, please use the 
 <div align="center">
 <h3>Test it out for yourself!</h3>
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MUFonUP4nlgtYoPIglnr0HsUsqljz64A?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MX3xY23Go1STe7LbDMvwf2KaqHpbrVhC?usp=sharing)
 </div>
