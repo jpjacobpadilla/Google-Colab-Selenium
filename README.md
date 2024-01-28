@@ -2,11 +2,13 @@
     <img src="https://github.com/jpjacobpadilla/Google-Colab-Selenium/blob/ecce30fd1f5f151e0c1d946259cf19de33aa8e9d/logo.png?raw=true">
 </p>
 
-The best way to use Selenium in Google Colab Notebooks!
+<p align="center">
+    <strong>The best way to use Selenium in Google Colab Notebooks!</strong>
+</p>
 
 - Simple setup of Selenium and ChromeDriver.
 - Seamless integration with Google Colab.
-- Support for undetected ChromeDriver for more advanced use cases.
+- Supports Undetected ChromeDriver for more advanced use cases.
 <br>
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MUFonUP4nlgtYoPIglnr0HsUsqljz64A?usp=sharing)
@@ -66,17 +68,14 @@ custom_options = Options()
 driver = gs.Chrome(options=custom_options)
 ```
 
-## Examples
-View them in Google Colab Notebooks:
-
-* [Wikipedia](https://colab.research.google.com/drive/17B8rvJfi2gkvyTPPdvs3WjaVlNNbg6IO?usp=sharing)
-* [Getty Images](https://colab.research.google.com/drive/14Onq2Mav6Z1EIPuE7K6zDXOtBDz_RQaQ)
-* [Books](https://colab.research.google.com/drive/1GLVAF4e2XWVhMZ91bYzrwy-C965twg1K)
-
 ## Contributing
-Contributions are welcome! If you have a suggestion or an issue, please use the issue tracker to let us know.
+Contributions are welcome! If you have a suggestion or an issue, please use the issue tracker to let me know.
 
 <br>
 <br>
+
+<div align="center">
+<h3>Test it out for yourself!</h3>
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MUFonUP4nlgtYoPIglnr0HsUsqljz64A?usp=sharing)
+</div>
