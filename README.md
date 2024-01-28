@@ -66,11 +66,15 @@ custom_options = Options()
 driver = gs.Chrome(options=custom_options)
 ```
 
+## Examples
+View in Google Colab Notebooks:
+
+* [Wikipedia](https://colab.research.google.com/drive/17B8rvJfi2gkvyTPPdvs3WjaVlNNbg6IO?usp=sharing)
+* [Getty Images](https://colab.research.google.com/drive/14Onq2Mav6Z1EIPuE7K6zDXOtBDz_RQaQ)
+* [Books](https://colab.research.google.com/drive/1GLVAF4e2XWVhMZ91bYzrwy-C965twg1K)
 
 ## Contributing
 Contributions are welcome! If you have a suggestion or an issue, please use the issue tracker to let us know.
-
-You can also contact me [here](https://jacobpadilla.com/contact).
 
 <br>
 <br>
