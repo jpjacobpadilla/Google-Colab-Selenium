@@ -67,7 +67,7 @@ driver = gs.Chrome(options=custom_options)
 ```
 
 ## Examples
-View in Google Colab Notebooks:
+View them in Google Colab Notebooks:
 
 * [Wikipedia](https://colab.research.google.com/drive/17B8rvJfi2gkvyTPPdvs3WjaVlNNbg6IO?usp=sharing)
 * [Getty Images](https://colab.research.google.com/drive/14Onq2Mav6Z1EIPuE7K6zDXOtBDz_RQaQ)
