@@ -2,9 +2,7 @@
     <img src="https://github.com/jpjacobpadilla/Google-Colab-Selenium/blob/ecce30fd1f5f151e0c1d946259cf19de33aa8e9d/logo.png?raw=true">
 </p>
 
-<p align="center">
-    <strong>The best way to use Selenium in Google Colab Notebooks!</strong>
-</p>
+<h3 align="left">The best way to use Selenium in Google Colab Notebooks!</h3>
 
 - Simple setup of Selenium and ChromeDriver.
 - Seamless integration with Google Colab.
