@@ -7,7 +7,7 @@ from google_colab_selenium.exceptions import (
 
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.selenium_manager import SeleniumManager
+from selenium.webdriver.common.driver_finder import DriverFinder
 
 
 class ColabSeleniumManager:
@@ -79,16 +79,14 @@ class ColabSeleniumManager:
 
         return options
 
-    @classmethod
-    def get_service(cls) -> Service:
-        path = cls.chromedriver_path or cls.prepare_driver()
+    def get_service(self) -> Service:
+        path = ColabSeleniumManager.chromedriver_path or self.prepare_driver()
         return Service(path)
 
-    @classmethod
-    def prepare_driver(cls) -> str:
+    def prepare_driver(self) -> str:
         try:
-            path = SeleniumManager().driver_location(Options())
-            cls.chromedriver_path = path
+            path = DriverFinder(Service(), self.options).get_driver_path()
+            ColabSeleniumManager.chromedriver_path = path
             return path
 
         except Exception as e:

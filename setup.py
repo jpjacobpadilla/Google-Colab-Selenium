@@ -7,7 +7,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 setup(
     name='google-colab-selenium',
     description='Easily use Selenium in Google Colab Notebooks!',
-    version='1.0.12',
+    version='1.0.13',
     packages=['google_colab_selenium'],
     install_requires=['selenium'],
     extras_require={
