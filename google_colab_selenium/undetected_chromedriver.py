@@ -41,8 +41,8 @@ class UndetectedChromeDriver(uc.Chrome):
         self.manager = ColabSeleniumManager(options or uc.ChromeOptions())
 
         try:
-            with Spinner('Initializing Chromedriver', done='Initialized Chromedriver'):
-                with UndetectedChromeDriver.__initialization_lock:
+            with Spinner('Initializing Chromedriver', done='Initialized Chromedriver'), \
+                UndetectedChromeDriver.__initialization_lock:
                     super().__init__(
                         service=self.manager.service,
                         options=self.manager.options,
