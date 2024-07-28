@@ -1,3 +1,4 @@
+import threading
 import subprocess
 
 from google_colab_selenium.spinner import Spinner
@@ -30,15 +31,18 @@ class ColabSeleniumManager:
 
     chromedriver_path: str = None
 
+    __initialization_lock = threading.Lock()
+
     def __init__(self, base_options: Options):
-        if not self._updated_apt:
-            self.update_upgrade_apt()
+        with ColabSeleniumManager.__initialization_lock:
+            if not self._updated_apt:
+                self.update_upgrade_apt()
 
-        if not self._downloaded_chrome:
-            self.install_chrome()
+            if not self._downloaded_chrome:
+                self.install_chrome()
 
-        self.options = self.default_options(base_options or Options())
-        self.service = self.get_service()
+            self.options = self.default_options(base_options or Options())
+            self.service = self.get_service()
 
     @classmethod
     def update_upgrade_apt(cls) -> None:

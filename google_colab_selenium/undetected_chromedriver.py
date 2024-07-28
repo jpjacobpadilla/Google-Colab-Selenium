@@ -1,3 +1,5 @@
+import threading
+
 from google_colab_selenium.colab_selenium_manager import ColabSeleniumManager
 from google_colab_selenium.spinner import Spinner
 from google_colab_selenium.exceptions import StartingChromeDriverError
@@ -31,17 +33,21 @@ class UndetectedChromeDriver(uc.Chrome):
         --disable-dev-shm-usage
         --lang=en
     """
+
+    __initialization_lock = threading.Lock()
+
     def __init__(self, options: Options = None, keep_alive: bool = True):
 
         self.manager = ColabSeleniumManager(options or uc.ChromeOptions())
 
         try:
             with Spinner('Initializing Chromedriver', done='Initialized Chromedriver'):
-                super().__init__(
-                    service=self.manager.service,
-                    options=self.manager.options,
-                    keep_alive=keep_alive
-                )
+                with UndetectedChromeDriver.__initialization_lock:
+                    super().__init__(
+                        service=self.manager.service,
+                        options=self.manager.options,
+                        keep_alive=keep_alive
+                    )
 
         except Exception as e:
             raise StartingChromeDriverError("""
