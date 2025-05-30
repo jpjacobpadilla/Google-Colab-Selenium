@@ -14,7 +14,6 @@ setup(
         'undetected': ['undetected-chromedriver']
     },
     author = 'Jacob Padilla',
-    author_email = 'jp@jacobpadilla.com',
     url='https://github.com/jpjacobpadilla/Google-Colab-Selenium',
     license='MIT',
     long_description=long_description,
