@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "google-colab-selenium"
+version = "1.0.15"
+description = "Easily use Selenium in Google Colab Notebooks!"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.7"
+license = { text = "MIT" }
+authors = [{ name = "Jacob Padilla" }]
+keywords = ["selenium", "google-colab", "webdriver", "automation", "chromedriver"]
+dependencies = [
+    "notebook>=6.5.7",
+    "selenium",
+]
+
+[project.urls]
+Homepage = "https://github.com/jpjacobpadilla/Google-Colab-Selenium"
+
+[project.optional-dependencies]
+undetected = ["undetected-chromedriver"]
+
+[tool.setuptools]
+packages = ["google_colab_selenium"]
