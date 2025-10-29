@@ -1,5 +1,5 @@
 import os
-assert 'COLAB_GPU' in os.environ, 'This package should only be used in Google Colab Notebooks.'
+# assert 'COLAB_GPU' in os.environ, 'This package should only be used in Google Colab Notebooks.'
 
 
 from google_colab_selenium.exceptions import (
