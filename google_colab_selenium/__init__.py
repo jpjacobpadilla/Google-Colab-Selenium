@@ -1,5 +1,3 @@
-import os
-
 from google_colab_selenium.exceptions import (
     GoogleColabSeleniumError,
     InstallChromeError,
