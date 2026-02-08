@@ -87,6 +87,15 @@ class ColabSeleniumManager:
         path = ColabSeleniumManager.chromedriver_path or self.prepare_driver()
         return Service(path)
 
+    @staticmethod
+    def get_chrome_major_version() -> int:
+        result = subprocess.run(
+            ['google-chrome', '--version'],
+            capture_output=True, text=True, check=True
+        )
+        # e.g. "Google Chrome 144.0.7559.132" -> "144"
+        return int(result.stdout.strip().split()[-1].split('.')[0])
+
     def prepare_driver(self) -> str:
         try:
             path = DriverFinder(Service(), self.options).get_driver_path()

@@ -44,8 +44,8 @@ class UndetectedChromeDriver(uc.Chrome):
             with Spinner('Initializing Chromedriver', done='Initialized Chromedriver'), \
                 UndetectedChromeDriver.__initialization_lock:
                     super().__init__(
-                        service=self.manager.service,
                         options=self.manager.options,
+                        version_main=self.manager.get_chrome_major_version(),
                         keep_alive=keep_alive
                     )
 
