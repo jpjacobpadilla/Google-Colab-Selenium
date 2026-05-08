@@ -1,3 +1,4 @@
+import os
 import threading
 import subprocess
 
@@ -22,11 +23,10 @@ class ColabSeleniumManager:
     _downloaded_chrome = False
     _updated_apt = False
 
-    update_apt = ['sudo', 'apt', 'update']
-    upgrade_apt = ['sudo', 'apt', 'upgrade']
+    update_apt_cmd = ['sudo', 'apt-get', 'update']
 
     download_command = ['curl', '-o', 'google-chrome-stable_current_amd64.deb', 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb']
-    install_command = ['sudo', 'apt', 'install', './google-chrome-stable_current_amd64.deb', '-y']
+    install_command = ['sudo', 'apt-get', 'install', '-y', './google-chrome-stable_current_amd64.deb']
     clean_up_command = ['rm', 'google-chrome-stable_current_amd64.deb']
 
     chromedriver_path: str = None
@@ -36,7 +36,7 @@ class ColabSeleniumManager:
     def __init__(self, base_options: Options):
         with ColabSeleniumManager.__initialization_lock:
             if not self._updated_apt:
-                self.update_upgrade_apt()
+                self.update_apt()
 
             if not self._downloaded_chrome:
                 self.install_chrome()
@@ -45,14 +45,13 @@ class ColabSeleniumManager:
             self.service = self.get_service()
 
     @classmethod
-    def update_upgrade_apt(cls) -> None:
+    def update_apt(cls) -> None:
         try:
-            with Spinner('Updating and upgrading APT', done='Updated and upgraded APT'):
-                subprocess.run(cls.update_apt, check=True)
-                subprocess.run(cls.upgrade_apt, check=True)
-        
+            with Spinner('Preparing environment', done='Environment ready'):
+                subprocess.run(cls.update_apt_cmd, check=True)
+
         except Exception as e:
-            raise GoogleColabSeleniumError('Failed to update and upgrade APT') from e
+            raise GoogleColabSeleniumError('Failed to update APT') from e
 
         else:
             cls._updated_apt = True
@@ -67,7 +66,11 @@ class ColabSeleniumManager:
         try:
             with Spinner('Downloading Google Chrome', done='Downloaded Google Chrome'):
                 subprocess.run(cls.download_command, check=True)
-                subprocess.run(cls.install_command, check=True)
+                subprocess.run(
+                    cls.install_command,
+                    check=True,
+                    env={**os.environ, 'DEBIAN_FRONTEND': 'noninteractive'},
+                )
                 subprocess.run(cls.clean_up_command, check=True)
 
         except Exception as e:

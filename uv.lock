@@ -754,7 +754,7 @@ wheels = [
 
 [[package]]
 name = "google-colab-selenium"
-version = "1.0.15"
+version = "1.0.18"
 source = { editable = "." }
 dependencies = [
     { name = "notebook", version = "6.5.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.8'" },
